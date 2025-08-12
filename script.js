@@ -3,15 +3,19 @@
 // ____________________________________________
 
 class Pet {
-    constructor(name, sound, image) {
+    constructor(name, soundText, image, soundUrl) {
       this.name = name;
-      this.sound = sound;
-      this.image = image;
+      this.soundText = soundText; //assign the sound text to this.sound
+      this.name = name;
+      this.soundUrl = new Audio(soundUrl);  //Audio
+      this.image=image;
       this.playCount = 0;
     }
   
     speak() {
-      alert(this.sound);
+      alert(this.sound); //displaay thee pet's sound text
+    this.soundUrl.currentTime = 0; // Ensures restart each click
+    this.soundUrl.play();
     }
   
     play() {
@@ -30,13 +34,13 @@ class Pet {
   // ____________________________________________
   function choosePet(type) {
     if (type === 'dog') {
-      currentPet = new Pet('Dog', 'Woof! 🐶', 'dog.jpeg');
+      currentPet = new Pet('Dog', 'Woof! 🐶', 'dog.jpeg', 'Media/big-dog-barking-300504.mp3');
     } else if (type === 'cat') {
-      currentPet = new Pet('Cat', 'Meow! 🐱', 'cat.jpeg');
+      currentPet = new Pet('Cat', 'Meow! 🐱', 'cat.jpeg', 'Media/cute-cat-352656.mp3');
     } else if (type === 'bird') {
-      currentPet = new Pet('bird', 'Squawk! 🦜', 'image.png');
+      currentPet = new Pet('bird', 'Squawk! 🦜', 'image.png', 'Media/humming-bird-333662.mp3');
     }else if (type === 'bunny') {
-   currentPet  = new Pet('bunny', 'Purr! 🐰', 'image copy.png');
+   currentPet  = new Pet('bunny', 'Purr! 🐰', 'image copy.png', 'Media/rabbit-sounds-358172.mp3');
     } else {
       alert('unkown pet type!');
       return;
