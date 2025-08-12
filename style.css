@@ -1,3 +1,20 @@
+
+.navbar {
+    list-style: none;
+    margin: 100px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+
+}
+
+
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(226, 43, 153);
